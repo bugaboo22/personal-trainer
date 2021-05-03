@@ -28,7 +28,6 @@ function CustomerList() {
         { field: 'email', sortable: true, filter: true },
         { field: 'phone', sortable: true, filter: true }
       
-
     ]
 
     return (
@@ -48,7 +47,6 @@ function CustomerList() {
     );
 
 }
-
 
 
 
