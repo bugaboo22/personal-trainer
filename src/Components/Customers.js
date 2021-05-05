@@ -7,7 +7,7 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 function CustomerList() {
 
     const [customer, setCustomer] = useState([]);
-
+    
     useEffect(() => {
         getCustomers();
       }, []);
@@ -32,7 +32,7 @@ function CustomerList() {
 
     return (
         <div>
-
+          <h2>Customers</h2>
         <div className="ag-theme-material" style={{ height: 600, width: 700, margin: 'auto' }}>   
           <AgGridReact      
           rowData={customer}
