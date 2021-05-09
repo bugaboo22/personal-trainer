@@ -10,18 +10,18 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 
-// FUNCTION TO EDIT CUSTOMER
-function EditCustomer(props) {
-   
+// FUNCTION TO ADD CUSTOMER
+function DeleteCustomer(props) {
+    
 
 
     return (
         <div>
-          Edit customer
+            Delete customer
         </div>
 
     );
 
 }
 
-export default EditCustomer;
+export default DeleteCustomer;

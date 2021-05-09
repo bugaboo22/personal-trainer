@@ -4,7 +4,7 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
-function CustomerList() {
+function CustomerList(props) {
 
     const [customer, setCustomer] = useState([]);
     
@@ -18,6 +18,8 @@ function CustomerList() {
         .then(data => setCustomer(data.content))
         .catch(err => console.error(err))
     }
+
+   
 
     const columns = [
         { field: 'firstname', sortable: true, filter: true },

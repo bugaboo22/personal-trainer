@@ -24,8 +24,7 @@ function Trainings() {
           return moment(data.value).format('YYYY-MM-DD')
       }, },
         { field: 'duration', sortable: true, filter: true },
-        { field: 'activity', sortable: true, filter: true },
-            
+        { field: 'activity', sortable: true, filter: true },          
     ]
 
 return (
@@ -33,8 +32,7 @@ return (
       <h2>Trainings</h2>
       
         <div className="ag-theme-material" style={{ height: 600, width: 700, margin: 'auto'  }}>  
-          <AgGridReact 
-          
+          <AgGridReact  
           rowData={trainings}
           columnDefs={columns}
           pagination={true}
