@@ -22,24 +22,20 @@ function AddCustomer(props) {
         email: '',
         phone: '',
     });
-
-    const newCustomer = (newCustomer) => {
-        fetch('https://customerrest.herokuapp.com/api/customers',
-        {
-          method: 'POST',
-          body: JSON.stringify(newCustomer),
-          headers: { 'Content-type' : 'application/json'  }
-        })
-        .then(_ => props.getCustomers())
+    
+    const getCustomers = () => {
+        fetch('https://customerrest.herokuapp.com/api/customers')
+        .then(response => response.json())
+        .then(data => setCustomer(data.content))
         .catch(err => console.error(err))
-      }
-
+    } 
+  
     const inputChanged = (event) => {
         setCustomer({...customer, [event.target.name]: event.target.value})
     }
 
     const handleSave = () => {
-        newCustomer(customer);
+        props.newCustomer(customer);
         setOpen(false);
       }
 
@@ -50,7 +46,6 @@ function AddCustomer(props) {
       const handleClose = () => {
         setOpen(false);
       };
-
 
     return (
         <div>

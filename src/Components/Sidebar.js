@@ -16,10 +16,8 @@ function Sidebar() {
       </button>
       <ul onClick={showSidebar}>
         <li><Link to="/">Customers</Link></li>
-        <li><Link to="/Trainings">Trainings</Link></li>
-        <li><Link to="/Add customer">Add customer</Link></li>
-        <li><Link to="/Edit customer">Edit customer</Link></li>
-        <li><Link to="Delete customer">Delete customer</Link></li>
+        <li><Link to="/Trainings">Trainings</Link></li>    
+        <li><Link to="/Calender">Calender</Link></li>
       </ul>
     </nav>
   );
