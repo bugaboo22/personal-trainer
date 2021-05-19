@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function Sidebar() {
   

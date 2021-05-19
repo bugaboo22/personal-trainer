@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import { forwardRef } from 'react';
-import moment from 'moment';
 import MaterialTable from 'material-table'
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -20,13 +18,11 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import AddTraining from './AddTraining';
 import Moment from 'react-moment';
 
 function Trainings() {
 
     const [trainings, setTrainings] = useState([]);
-    const [open, setOpen] = useState(false);
     const [msg, setMsg] = useState('');
 
     useEffect(() => {
@@ -39,20 +35,9 @@ function Trainings() {
         .then(data => setTrainings(data))
         .catch(err => console.error(err))
     }
-    /*
-     const deleteTraining = (rowData) => {
-      if (window.confirm('Are you sure?')) {
-      fetch(rowData.links[0].href, {
-          method: 'DELETE'
-      })
-      .then(_ =>  getTrainings())
-      .then(_ => setMsg('Training was deleted succesfully'))
-      .then(_ => setOpen(true))
-      .catch(err => console.error(err))
-     }
-    } */
+    
     const deleteTraining = (selectedRow) => {
-      console.log(selectedRow.id)
+      if (window.confirm('Are you sure?')) {
       fetch('https://customerrest.herokuapp.com/api/trainings/' + selectedRow.id,
         { method: 'DELETE' })
         .then(response => {
@@ -67,6 +52,7 @@ function Trainings() {
         )
         .catch(err => console.error(err))
     }
+  }
 
     const  columns = [
       

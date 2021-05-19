@@ -1,16 +1,12 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import Customers from './Customers';
+import { useState } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-
-// FUNCTION TO ADD CUSTOMER
 function AddCustomer(props) {
     const [open, setOpen] = useState(false);
     const [customer, setCustomer] = useState({
@@ -23,13 +19,6 @@ function AddCustomer(props) {
         phone: '',
     });
     
-    const getCustomers = () => {
-        fetch('https://customerrest.herokuapp.com/api/customers')
-        .then(response => response.json())
-        .then(data => setCustomer(data.content))
-        .catch(err => console.error(err))
-    } 
-  
     const inputChanged = (event) => {
         setCustomer({...customer, [event.target.name]: event.target.value})
     }

@@ -4,7 +4,7 @@
     left: -300px;
     width: 300px;
     height: 100%;
-    background-color: peru;
+    background-color: navy;
     transition: left 300ms ease-out;
   }
   .sidebar.active {
@@ -23,7 +23,7 @@
     text-decoration: none;
     padding: 10px;
     display: block;
-    color: #fff;
+    color:white;
   }
 
   .hamburger {
@@ -32,7 +32,7 @@
     width: 50px;
     position: absolute;
     right: -50px;
-    background-color: peru;
+    background-color: navy;
   }
   
   .hamburger:after,
